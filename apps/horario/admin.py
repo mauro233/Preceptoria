@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import HorarioConsulta
+
+@admin.register(HorarioConsulta)
+class HorarioConsultaAdmin(admin.ModelAdmin):
+    list_display = ('profesor', 'materia', 'desde', 'hasta')
