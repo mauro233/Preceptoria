@@ -7,5 +7,4 @@ from .models import(
 
 @admin.register(Anuncio)
 class AnuncioAdmin(admin.ModelAdmin):
-	model = Anuncio
-
+	pass
