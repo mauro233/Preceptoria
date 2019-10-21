@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.novedades'
+    'apps.alumno',
 ]
 
 MIDDLEWARE = [
@@ -124,4 +124,9 @@ STATICFILES_DIRS = (
 
     os.path.join(BASE_DIR, 'static'), #le indica a django donde van a estar los archivos estaticos
 )
+
+
+LOGIN_URL = '/inicia-sesion/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
