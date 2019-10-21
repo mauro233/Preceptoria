@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Bievenido{% endblock %}
+{% block titulo %}Bievenido{% endblock %}
 
-{% block content %}
+{% block contenido %}
 
     {% if user.is_authenticated %}
         <h1>Hola {{ user.username }}</h1>
@@ -12,6 +12,6 @@
         <a href="{% url 'sign_in' %}">Iniciar sesión</a>
     {% endif %}
     
-{% endblock content %}
+{% endblock contenido %}
 
 
