@@ -1,13 +1,43 @@
-{% extends "base.html" %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block titulo %}Inicia Sesión{% endblock %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-{% block contenido %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <title>Inciar sesion</title>
+    {% load crispy_forms_tags %}
+  </head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'sesion:sign_up' %}">Registrarse</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'anuncios:list_anuncios' %}">Volver al Inicio</a>
+          </li> 
+        </ul>
+      </div>
+    </nav>
+
+
+<div class="card text-white bg-primary mb-10" style="max-width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">Inicie Sesion</h5>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <input type="submit" name="submit">
     </form>
+  </div>
+</div>
+</body>
 
-{% endblock contenido %}
+
 
