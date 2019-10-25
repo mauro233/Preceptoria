@@ -14,6 +14,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 class SignInView(LoginView):
     template_name = 'alumno/iniciar_sesion.html'
 
+
 class SignUpView(CreateView):
     model = Alumno
     form_class = SignUpForm
@@ -29,8 +30,6 @@ class SignUpView(CreateView):
         login(self.request, usuario)
         return redirect('/')
 
-class BienvenidaView(TemplateView):
-   template_name = 'alumno/bienvenida.html'
 
 class SignOutView(LogoutView):
-    pass
+    template_name = 'alumno/logout.html'
