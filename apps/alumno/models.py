@@ -6,7 +6,8 @@ from django.dispatch import receiver
 
 class Alumno(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
-    nombre = models.CharField(max_length=50, blank=True, help_text='Ingrese su nombre.')
+    primer_nombre = models.CharField(max_length=50, blank=True, help_text='Ingrese su primer nombre.')
+    segundo_nombre = models.CharField(max_length=50, blank=True, help_text='Ingrese su segundo nombre')
     apellido = models.CharField(max_length=50, blank=True, help_text='Ingrese su apellido.')
     correo = models.EmailField(blank=True, help_text='Ingrese su correo electrónico.')
     
@@ -16,7 +17,7 @@ class Alumno(models.Model):
 
     # Python 3
     def __str__(self): 
-        return self.usuario.username
+        return '(%s, %s, %s, %s)' % (self.usuario.username, self.primer_nombre, self.apellido, self.correo)
 
 @receiver(post_save, sender=User)
 def crear_usuario_perfil(sender, instance, created, **kwargs):
