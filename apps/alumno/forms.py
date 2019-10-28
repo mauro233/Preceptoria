@@ -6,6 +6,7 @@ from .models import Alumno
 class SignUpForm(UserCreationForm):
     primer_nombre = forms.CharField(max_length=140, required=True)
     segundo_nombre = forms.CharField(max_length=140, required=False)
+    apellido = forms.CharField(max_length=50, required=True)
     email = forms.EmailField(required=True)
 
     class Meta:
@@ -15,6 +16,7 @@ class SignUpForm(UserCreationForm):
             'email',
             'primer_nombre',
             'segundo_nombre',
+            'apellido',
             'password1',
             'password2',
-            )
+        )
