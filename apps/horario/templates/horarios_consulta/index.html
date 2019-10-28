@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titulo %}Horarios de Consulta{% endblock titulo %}
+
+{% block contenido %}
+
+{% for horarioconsulta in horariosconsultas %}
+<div class="card-columns">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Materia: {{ horarioconsulta.materia }}</h5>
+      <p class="card-text">Profesor: {{ horarioconsulta.profesor }}</p>
+      <p class="card-text"><small class="text-muted">Horario de Inicio: {{ horarioconsulta.desde }} / Horarios de Fin: {{ horarioconsulta.hasta }}</small></p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock contenido %}

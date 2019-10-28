@@ -4,7 +4,8 @@ from .views import(
 	DetailHorarioConsultaView
 )
 
+app_name= 'horarios'
 urlpatterns = [
-	path('horarios_consulta/', ListHorarioConsultaView.as_view()),
+	path('horarios_consulta/', ListHorarioConsultaView.as_view(), name='consulta' ),
 	path('<int:pk>/', DetailHorarioConsultaView.as_view())
 ]

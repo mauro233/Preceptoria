@@ -8,8 +8,8 @@ class ListHorarioConsultaView(ListView):
 	model = HorarioConsulta
 	paginate_by = 5
 	queryset = HorarioConsulta.objects.all()
-	#template_name = 'horario_consulta/index.html'
-	context_object_name = 'list_consulta_horario'
+	template_name = 'horarios_consulta/index.html'
+	context_object_name = 'horariosconsultas'
 
 class DetailHorarioConsultaView(DetailView):
 	model = HorarioConsulta
