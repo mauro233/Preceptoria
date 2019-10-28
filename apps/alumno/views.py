@@ -3,7 +3,9 @@ from django.contrib.auth import login, authenticate
 from django.views.generic import CreateView, TemplateView
 from .models import Alumno
 from .forms import SignUpForm
-
+from .serializers import AlumnoSerializer
+from rest_framework import generics
+from django.views.generic.list import ListView
 
 class SignUpView(CreateView):
     model = Alumno
@@ -19,3 +21,12 @@ class SignUpView(CreateView):
         usuario = authenticate(username=usuario, password=password)
         login(self.request, usuario)
         return redirect('/')
+
+
+class AlumnoList(generics.ListAPIView):
+    queryset = Alumno.objects.all()
+    serializer_class = AlumnoSerializer
+
+  
+
+
