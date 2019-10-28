@@ -1,18 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-
 from django.views.generic import CreateView, TemplateView
-
 from .models import Alumno
-
 from .forms import SignUpForm
-
-from django.contrib.auth.views import LoginView
-
-from django.contrib.auth.views import LoginView, LogoutView 
-
-class SignInView(LoginView):
-    template_name = 'alumno/iniciar_sesion.html'
 
 
 class SignUpView(CreateView):
@@ -29,7 +19,3 @@ class SignUpView(CreateView):
         usuario = authenticate(username=usuario, password=password)
         login(self.request, usuario)
         return redirect('/')
-
-
-class SignOutView(LogoutView):
-    template_name = 'alumno/logout.html'

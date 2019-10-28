@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block titulo %}Bienvenido{% endblock titulo %}
+{% block contenido %}
+<div class="row">
+	{% for anuncio in anuncios %}
+		<div class="card text-center">
+			<div class="card-header">
+				{{ anuncio.tipo }}
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">{{ anuncio.titulo }}</h5>
+				<p class="card-text">{{ anuncio.descripcion }}</p>
+				<a href="{% url 'anuncios:detail_anuncio' anuncio.id %}" class="btn btn-primary">Leer Mas</a>
+			</div>
+			<div class="card-footer text-muted">
+				{{ anuncio.fecha }}
+			</div>
+		</div>
+	{% endfor %}
+</div>
+{% endblock contenido %}
