@@ -6,7 +6,6 @@ from .models import HorarioConsulta
 
 class ListHorarioConsultaView(ListView):
 	model = HorarioConsulta
-	paginate_by = 5
 	queryset = HorarioConsulta.objects.all()
 	template_name = 'horarios_consulta/index.html'
 	context_object_name = 'horariosconsultas'
@@ -15,3 +14,5 @@ class DetailHorarioConsultaView(DetailView):
 	model = HorarioConsulta
 	#template_name = 'horario_consulta/detalle_anuncio.html'
 	context_object_name = 'detalle_consulta_horario'
+
+
