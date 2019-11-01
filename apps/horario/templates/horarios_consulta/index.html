@@ -4,14 +4,64 @@
 {% block contenido %}
 
 {% for horarioconsulta in horariosconsultas %}
-<div class="card-columns">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Materia: {{ horarioconsulta.materia }}</h5>
-      <p class="card-text">Profesor: {{ horarioconsulta.profesor }}</p>
-      <p class="card-text"><small class="text-muted">Horario de Inicio: {{ horarioconsulta.desde }} / Horarios de Fin: {{ horarioconsulta.hasta }}</small></p>
-    </div>
-  </div>
-</div>
+<table class="table table-bordered table-dark">
+  <thead>
+  	<tr>
+  		<th style="text-align:center">Horarios de Consulta</th>
+  	</tr>
+    <tr>
+      <th scope="col" rowspan="2">Jefaturas</th>
+      <th scope="col" rowspan="2">Docente</th>
+      <th scope="col" colspan="2" style="text-align:center">Lunes</th>
+      <th scope="col" colspan="2" style="text-align:center">Martes</th>
+      <th scope="col" colspan="2" style="text-align:center">Miercoles</th>
+      <th scope="col" colspan="2" style="text-align:center">Jueves</th>
+      <th scope="col" colspan="2" style="text-align:center">Viernes</th>
+      <th scope="col" colspan="3" style="text-align:center">Horas institucionales</th>
+
+    </tr>
+
+
+    <tr>
+      <th style="text-align:center">Desde</th>
+      <th style="text-align:center">Hasta</th>
+      <th style="text-align:center">Desde</th>
+      <th style="text-align:center">Hasta</th>
+      <th style="text-align:center">Desde</th>
+      <th style="text-align:center">Hasta</th>
+      <th style="text-align:center">Desde</th>
+      <th style="text-align:center">Hasta</th>
+      <th style="text-align:center">Desde</th>
+      <th style="text-align:center">Hasta</th>
+      <th style="text-align:center">Dia</th>
+      <th style="text-align:center">Desde</th>
+      <th style="text-align:center">Hasta</th>
+    </tr>    
+</thead>
+<tbody>
+{% for horarioconsulta in horariosconsultas %}
+    <tr>
+      <td>{{ horarioconsulta.materia }}</td>
+      <td>{{ horarioconsulta.profesor }}</td>
+      <td>{{ horarioconsulta.desde }}</td>
+      <td>{{ horarioconsulta.hasta }}</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
 {% endfor %}
 {% endblock contenido %}
+{{ horarioconsulta.materia }}
+{{ horarioconsulta.profesor }}
+{{ horarioconsulta.desde }}
