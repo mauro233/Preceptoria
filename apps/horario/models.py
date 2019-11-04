@@ -6,14 +6,14 @@ DIA_CHOICES = (
 	('martes', 'Martes'),
 	('miercoles', 'Miércoles'),
 	('jueves', 'Jueves'),
-	('viernes', 'Viernes')
+	('viernes', 'Viernes'),
 )
 
 class HorasInstitucionales (models.Model):
 	dia = models.CharField(
 		'Dia de la Semana',
 		max_length=10,
-		choices='DIA_CHOICES',
+		choices=DIA_CHOICES,
 		help_text='Ingrese el dia que se realizan las horas institucionales'
 	)
 	desde = models.TimeField(
