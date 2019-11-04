@@ -3,7 +3,6 @@
 
 {% block contenido %}
 
-{% for horarioconsulta in horariosconsultas %}
 <table class="table table-bordered table-dark">
   <thead>
   	<tr>
@@ -60,8 +59,5 @@
 {% endfor %}
   </tbody>
 </table>
-{% endfor %}
+
 {% endblock contenido %}
-{{ horarioconsulta.materia }}
-{{ horarioconsulta.profesor }}
-{{ horarioconsulta.desde }}
