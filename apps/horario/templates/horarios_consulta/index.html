@@ -6,7 +6,7 @@
 <table class="table table-bordered table-dark">
   <thead>
   	<tr>
-  		<th style="text-align:center">Horarios de Consulta</th>
+  		<th style="text-align:center" colspan="15">Horarios de Consulta</th>
   	</tr>
     <tr>
       <th scope="col" rowspan="2">Jefaturas</th>
@@ -42,19 +42,19 @@
     <tr>
       <td>{{ horarioconsulta.materia }}</td>
       <td>{{ horarioconsulta.profesor }}</td>
-      <td>{{ horarioconsulta.desde }}</td>
-      <td>{{ horarioconsulta.hasta }}</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <td>{{ horarioconsulta.desde_lunes }}</td>
+      <td>{{ horarioconsulta.hasta_lunes }}</td>
+      <td>{{ horarioconsulta.desde_martes }}</td>
+      <td>{{ horarioconsulta.hasta_martes }}</td>
+      <td>{{ horarioconsulta.desde_miercoles }}</td>
+      <td>{{ horarioconsulta.hasta_miercoles }}</td>
+      <td>{{ horarioconsulta.desde_jueves }}</td>
+      <td>{{ horarioconsulta.hasta_jueves }}</td>
+      <td>{{ horarioconsulta.desde_viernes}}</td>
+      <td>{{ horarioconsulta.hasta_viernes }}</td>
+      <td>{{ horarioconsulta.horas_institucionales.dia }}</td> 
+      <td>{{ horarioconsulta.horas_institucionales.desde }}</td>
+      <td>{{ horarioconsulta.horas_institucionales.hasta }}</td>
     </tr>
 {% endfor %}
   </tbody>
