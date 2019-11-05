@@ -1,21 +1,41 @@
 {% extends 'base.html' %}
 {% block titulo %}Bienvenido{% endblock titulo %}
 {% block contenido %}
-<div class="row">
-	{% for anuncio in anuncios %}
-		<div class="card text-center">
-			<div class="card-header">
-				{{ anuncio.tipo }}
+<center>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12" aling-items="center">
+			<div class="row">
+				{% for anuncio in anuncios %}
+				<div class="col-md-2">
+				</div>
+
+					<div id="anuncios_detras" class="col-md-8">
+						<div class="jumbotron card card-block">
+							<h2>
+								{{ anuncio.titulo }}
+							</h2>
+							<h6>
+								{{ anuncio.tipo }}
+							</h6>
+							<p>
+								{{ anuncio.descripcion }}
+							</p>
+
+							<p>
+								<a class="btn btn-primary btn-large" href="{% url 'anuncios:detail_anuncio' anuncio.id %}">Leer Mas</a>
+							</p>
+							<p>
+								{{ anuncio.fecha }}
+							</p>
+						</div>
+					</div>
+					<div class="col-md-2">
+					</div>
+				{% endfor %}
 			</div>
-			<div class="card-body">
-				<h5 class="card-title">{{ anuncio.titulo }}</h5>
-				<p class="card-text">{{ anuncio.descripcion }}</p>
-				<a href="{% url 'anuncios:detail_anuncio' anuncio.id %}" class="btn btn-primary">Leer Mas</a>
-			</div>
-			<div class="card-footer text-muted">
-				{{ anuncio.fecha }}
-			</div>
-		</div>
-	{% endfor %}
+		</div>	
+	</div>
 </div>
+</center>
 {% endblock contenido %}

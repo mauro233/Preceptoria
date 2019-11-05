@@ -5,15 +5,17 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <title>{% block titulo %}{% endblock titulo %}</title>
 </head>
+<div class="container">
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          {% if user.is_authenticated %}
+          {% if user.is_superuser %}
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'anuncios:list_anuncios' %}">Anuncios</a>
             </li> 
@@ -37,7 +39,13 @@
           {% else %}
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'anuncios:list_anuncios' %}">Anuncios</a>
-            </li> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Horarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'horarios:consulta' %}">Horarios Consulta</a>
+            </li>
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'sesion:sign_up' %}">Registrarse</a>
             </li>
@@ -49,14 +57,12 @@
       </div>
     </div>
   </nav>
-  <div class="container">
     {% block contenido %}{% endblock contenido %}
-
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  </div>
 </body>
 </html>
