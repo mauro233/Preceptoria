@@ -93,7 +93,7 @@ class HorarioConsulta (models.Model):
 	horas_institucionales = models.ForeignKey(
 		HorasInstitucionales,
 		on_delete=models.CASCADE
-	)
+	) 
 
 	class Meta:
 		ordering= ['materia']
@@ -103,3 +103,15 @@ class HorarioConsulta (models.Model):
 	def __str__(self):
 		return '(%s, %s)' % (self.materia, self.profesor)
 
+
+
+class Materia(models.Model):
+	curso = models.CharField(, max_length=50)
+	nombre = models.CharField(, max_length=50)
+	profesor = models.CharField(, max_length=50)
+
+class Horario(models.Model):
+	materia = models.ForeignKey(Materia, on_delete=models.CASCADE, related_name='materiaId', help_text='Seleccion la materia')
+	hora_inicio = models.TimeField()
+	hora_fin = models.TimeField()
+	dia = models.CharField(, max_length=50, help_text='Escriba el dia en el que dicte la materia')
