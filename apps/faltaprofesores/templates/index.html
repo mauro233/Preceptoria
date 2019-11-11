@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block titulo %}Falta de Profesores{% endblock titulo %}
+{% block contenido %}
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Profesor</th>
+      <th scope="col">Materia</th>
+      <th scope="col">Curso</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Turno</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for faltaprofesor in faltasprofesores %}
+	    <tr>
+	      <td>{{ faltaprofesor.profesor }}</td>
+	      <td>{{ faltaprofesor.materia }}</td>
+	      <td>{{ faltaprofesor.curso }}</td>
+	      <td>{{ faltaprofesor.fecha }}</td>
+	      <td>{{ faltaprofesor.turno }}</td>
+	    </tr>
+   	{% endfor %}
+  </tbody>
+</table>
+{% endblock contenido %}
