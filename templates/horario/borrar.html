@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block titulo %}Borrar: {{ horario.nombre }} {{ horario.turno }} {% endblock titulo %}
+{% block contenido %}
+
+	<h1 class="text-white">Borrar: {{ horario.nombre }} de {{ horario.turno }} </h1>
+	<a href="{% url 'horarios:detalle' horario.id %}" class="btn btn-danger btn-lg" role="button" style="margin-right: 10px; margin-bottom: 10px;">Cancelar</a>
+	<div class="card text-white bg-dark mb-3" style="padding: 15px">
+	<form action="" method="post">
+		{% csrf_token %}
+		<p>Esta seguro que quiere borrar "{{ horario.nombre }} de {{ horario.turno }}"?</p>
+    	<button type="submit" class="btn btn-danger">Borrar horario.</button>
+	</form>
+	</div>
+
+{% endblock contenido %}

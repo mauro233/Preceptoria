@@ -42,10 +42,10 @@ class HorarioConsultaAdmin(admin.ModelAdmin):
 
 @admin.register(Horario)
 class HorarioAdmin(admin.ModelAdmin):
-    list_display = ('nombre',) 
+    list_display = ('nombre', 'turno') 
     fieldsets = (
         (None, {
-            'fields': ('nombre',)
+            'fields': ('nombre', 'turno')
         }
         ),
         ('Dia Lunes', {

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block titulo %}Modificar {{ horario.nombre }} {{ horario.turno }} {% endblock titulo %}
+{% block contenido %}
+
+	<h1 class="text-white">Modificar {{ horario.nombre }} de {{ horario.turno }} </h1>
+	<a href="{% url 'horarios:detalle' horario.id %}" class="btn btn-danger btn-lg" role="button" style="margin-right: 10px; margin-bottom: 10px;">Cancelar</a>
+	<div class="card text-black mb-3" style="padding: 15px">
+	<form action="" method="post">
+		{% csrf_token %}
+		{{ form|crispy }}
+    	<button type="submit" class="btn btn-primary btn-lg btn-block">Modificar horario.</button>
+	</form>
+	</div>
+	
+{% endblock contenido %}

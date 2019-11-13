@@ -165,4 +165,4 @@ class Horario(models.Model):
 	V7 = models.ForeignKey(Materia, on_delete=models.CASCADE, related_name='V7Id', help_text='Seleccione la materia', default='-', null=True, blank=True)
 
 	def __str__(self):
-		return '%s' % (self.nombre)
+		return '%s, %s' % (self.nombre, self.turno)
