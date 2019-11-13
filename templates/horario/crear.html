@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block titulo %}Registrar horario{% endblock titulo %}
+{% block contenido %}
+	<h1 class="text-white">Registrar un horario:</h1>
+	<a href="{% url 'horarios:listado' %}" class="btn btn-danger btn-lg" role="button">Cancelar</a>
+	<div class="card text-black mb-3" style="padding: 15px">
+	<form action="" method="post">
+		{% csrf_token %}
+		{{ form|crispy }}
+    	<button type="submit" class="btn btn-success btn-lg btn-block">Registrar horario.</button>
+	</form>
+	</div>
+{% endblock contenido %}
