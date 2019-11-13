@@ -40,7 +40,7 @@ class HorarioCreate(LoginRequiredMixin, CreateView):
 
 class HorarioUpdate(LoginRequiredMixin, UpdateView):
 	model = Horario
-	fields= ['nombre', 'año', 'fecha_hora', 'aula', 'profesores']
+	fields= ['nombre', 'turno', 'L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7', 'M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'J1', 'J2', 'J3', 'J4', 'J5', 'J6', 'J7', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7']
 	template_name = 'horario/modificar.html'
 	success_url = reverse_lazy('horarios:listado')
 
