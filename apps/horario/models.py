@@ -115,6 +115,7 @@ class Materia(models.Model):
 	nombre = models.CharField(max_length=50)
 	profesor = models.CharField(max_length=50)
 
+
 	def __str__(self):
 		return '%s, %s' % (self.nombre, self.profesor)
 
