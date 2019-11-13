@@ -20,7 +20,7 @@ TIPO_ANUNCIO = [
 
 class Anuncio(models.Model):
 	fecha = models.DateField(
-		auto_now=True,
+		auto_now_add=True,
 		help_text='Fecha de publicacion'
 	)
 	titulo = models.CharField(

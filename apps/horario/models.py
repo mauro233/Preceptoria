@@ -106,12 +106,12 @@ class HorarioConsulta (models.Model):
 
 
 class Materia(models.Model):
-	curso = models.CharField(, max_length=50)
-	nombre = models.CharField(, max_length=50)
-	profesor = models.CharField(, max_length=50)
+	curso = models.CharField(max_length=50)
+	nombre = models.CharField(max_length=50)
+	profesor = models.CharField(max_length=50)
 
 class Horario(models.Model):
 	materia = models.ForeignKey(Materia, on_delete=models.CASCADE, related_name='materiaId', help_text='Seleccion la materia')
 	hora_inicio = models.TimeField()
 	hora_fin = models.TimeField()
-	dia = models.CharField(, max_length=50, help_text='Escriba el dia en el que dicte la materia')
+	dia = models.CharField (max_length=50, help_text='Escriba el dia en el que dicte la materia')

@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block titulo %}Bienvenido{% endblock titulo %}
 {% block contenido %}
-<center>
+
+<a href="{% url 'anuncios:create_anuncio' %}"><button type="button" class="btn btn-primary btn-lg btn-block">Crear Anuncio</button></a>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12" aling-items="center">
@@ -37,5 +38,4 @@
 		</div>	
 	</div>
 </div>
-</center>
 {% endblock contenido %}
