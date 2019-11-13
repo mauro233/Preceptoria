@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block titulo %}Horario{% endblock titulo %}
+{% block contenido %}
+<div class="container">
+	<h1 class="text-white">Todos los horarios registradas:</h1>
+	<a href="{% url 'horarios:crear' %}"><button type="button" class="btn btn-primary btn-lg btn-block">Registrar una horario</button></a>
+	</br>
+	<div class="row">
+
+	{% for horario in horarios %}
+	
+	<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Horario</th>
+      <th scope="col"> {{ horario.nombre }} </th>
+      <th scope="col">Lunes</th>
+      <th scope="col">Martes</th>
+      <th scope="col">Miércoles</th>
+      <th scope="col">Jueves</th>
+      <th scope="col">Viernes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13:30 A 14:10</th>
+      <td>1</td>
+      <td>{{ horario.L1 }}</td>
+      <td>{{ horario.M1 }}</td>
+      <td>{{ horario.X1 }}</td>
+      <td>{{ horario.J1 }}</td>
+      <td>{{ horario.V1 }}</td>
+    </tr>
+    <tr>
+      <th>14:10 A 14:50</th>
+      <td>2</td>
+      <td>{{ horario.L2 }}</td>
+      <td>{{ horario.M2 }}</td>
+      <td>{{ horario.X2 }}</td>
+      <td>{{ horario.J2 }}</td>
+      <td>{{ horario.V2 }}</td>
+    </tr>
+    <tr>
+      <th>15:00 A 15:40</th>
+      <td>3</td>
+      <td>{{ horario.L3 }}</td>
+      <td>{{ horario.M3 }}</td>
+      <td>{{ horario.X3 }}</td>
+      <td>{{ horario.J3 }}</td>
+      <td>{{ horario.V3 }}</td>
+    </tr>
+    <tr>
+      <th>15:40 A 16:20</th>
+      <td>4</td>
+      <td>{{ horario.L4 }}</td>
+      <td>{{ horario.M4 }}</td>
+      <td>{{ horario.X4 }}</td>
+      <td>{{ horario.J4 }}</td>
+      <td>{{ horario.V4 }}</td>
+    </tr>
+    <tr>
+      <th>16:30 A 17:10</th>
+      <td>5</td>
+      <td>{{ horario.L5 }}</td>
+      <td>{{ horario.M5 }}</td>
+      <td>{{ horario.X5 }}</td>
+      <td>{{ horario.J5 }}</td>
+      <td>{{ horario.V5 }}</td>
+    </tr>
+    <tr>
+      <th>17:10 A 17:50</th>
+      <td>6</td>
+      <td>{{ horario.L6 }}</td>
+      <td>{{ horario.M6 }}</td>
+      <td>{{ horario.X6 }}</td>
+      <td>{{ horario.J6 }}</td>
+      <td>{{ horario.V6 }}</td>
+    </tr>
+    <tr>
+      <th>17:50 A 18:30</th>
+      <td>7</td>
+      <td>{{ horario.L7 }}</td>
+      <td>{{ horario.M7 }}</td>
+      <td>{{ horario.X7 }}</td>
+      <td>{{ horario.J7 }}</td>
+      <td>{{ horario.V7 }}</td>
+    </tr>
+  </tbody>
+</table>
+
+	{% endfor %}
+
+	</div>
+</div>
+{% endblock contenido %}
