@@ -1,16 +1,20 @@
 {% extends "base.html" %}
-{% block titulo %}{{ detalle.titulo }}{% endblock titulo %}
+{% block titulo %}{{ anuncio.titulo }}{% endblock titulo %}
 {% block contenido %}
-	
 
 <div class="container">
-	<div class="jumbotron jumbotron-fluid">
-	  <div class="container">
-	    <h1 class="display-4">{{ detalle.titulo }}</h1>
-	    <p class="lead">{{ detalle.descripcion }}</p>
-	  </div>
+
+	<a href="{% url 'anuncios:list_anuncios' %}" class="btn btn-primary btn-lg" role="button" style="margin-right: 15px; margin-bottom: 15px;">Volver</a>
+	<a href="{% url 'anuncios:update_anuncio' anuncio.id %}" class="btn btn-primary btn-lg" role="button" style="margin-right: 10px; margin-bottom: 10px;">Modificar</a>
+	<a href="{% url 'anuncios:delete_anuncio' anuncio.id %}" class="btn btn-danger btn-lg" role="button" style="margin-right: 10px; margin-bottom: 10px;">Borrar</a>
+
+<div class="shadow-lg p-3 mb-5 bg-white rounded">
+	<div class="jumbotron jumbotron-fluid" style="border: 2px solid black">
+		  <div class="container">
+			    <h1 class="display-4" style="text-align:center; padding:15px;" >{{ anuncio.titulo }}</h1>
+		    	<p class="font-weight-bolder" style="border-top: 2px solid black; text-align:center; padding-top: 40px;">{{ anuncio.descripcion }}</p>
+		  </div>
 	</div>
 </div>
 {% endblock contenido %}
-</html>
 
