@@ -38,23 +38,24 @@
     </tr>    
 </thead>
 <tbody>
-{% for horarioconsulta in horariosconsultas %}
+{% for consulta in consultas %}
     <tr>
-      <td>{{ horarioconsulta.materia }}</td>
-      <td>{{ horarioconsulta.profesor }}</td>
-      <td>{{ horarioconsulta.desde_lunes }}</td>
-      <td>{{ horarioconsulta.hasta_lunes }}</td>
-      <td>{{ horarioconsulta.desde_martes }}</td>
-      <td>{{ horarioconsulta.hasta_martes }}</td>
-      <td>{{ horarioconsulta.desde_miercoles }}</td>
-      <td>{{ horarioconsulta.hasta_miercoles }}</td>
-      <td>{{ horarioconsulta.desde_jueves }}</td>
-      <td>{{ horarioconsulta.hasta_jueves }}</td>
-      <td>{{ horarioconsulta.desde_viernes}}</td>
-      <td>{{ horarioconsulta.hasta_viernes }}</td>
-      <td>{{ horarioconsulta.horas_institucionales.dia }}</td> 
-      <td>{{ horarioconsulta.horas_institucionales.desde }}</td>
-      <td>{{ horarioconsulta.horas_institucionales.hasta }}</td>
+      <td>{{ consulta.materia }}</td>
+      <td>{{ consulta.profesor }}</td>
+      <td>{{ consulta.desde_lunes }}</td>
+      <td>{{ consulta.hasta_lunes }}</td>
+      <td>{{ consulta.desde_martes }}</td>
+      <td>{{ consulta.hasta_martes }}</td>
+      <td>{{ consulta.desde_miercoles }}</td>
+      <td>{{ consulta.hasta_miercoles }}</td>
+      <td>{{ consulta.desde_jueves }}</td>
+      <td>{{ consulta.hasta_jueves }}</td>
+      <td>{{ consulta.desde_viernes}}</td>
+      <td>{{ consulta.hasta_viernes }}</td>
+      <td>{{ consulta.horas_institucionales.dia }}</td> 
+      <td>{{ consulta.horas_institucionales.desde }}</td>
+      <td>{{ consulta.horas_institucionales.hasta }}</td>
+      <td><a href="{% url 'horarios:detalle_consulta' consulta.id %}">Ver</a></td>
     </tr>
 {% endfor %}
   </tbody>

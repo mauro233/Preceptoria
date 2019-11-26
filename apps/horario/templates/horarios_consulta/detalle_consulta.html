@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titulo %}{{ detalle_consulta.materia}} - {{ detalle_consulta.profesor }}{% endblock titulo %}
+{% block contenido %}
+
+<div class="container">
+
+	<a href="{% url 'horarios:consultas' %}" class="btn btn-primary btn-lg" role="button" style="margin-right: 15px; margin-bottom: 15px;">Volver</a>
+
+<div class="shadow-lg p-3 mb-5 bg-white rounded">
+	<div class="jumbotron jumbotron-fluid" style="border: 2px solid black">
+		  <div class="container">
+			 
+		  </div>
+	</div>
+</div>
+{% endblock contenido %}
+
