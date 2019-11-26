@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block titulo %}Falta de Profesores{% endblock titulo %}
-{% block contenido %}
 {% load static %}
+{% block titulo %}Resultado Falta de Profesores{% endblock titulo %}
+{% block contenido %}
+
 <form class="form-inline" action="{% url 'falta_profesor:search' %}" method="get">
   <input name="q" type="search" class="form-control mr-sm-3" placeholder="Busqueda">
   <button class="btn btn-outline-success my-4 my-sm-2" type="submit"><img src="{% static 'img/icono_lupa.png' %}" alt="Search image"></button>
 </form>
-
 
 <table class="table table-bordered table-dark">
   <thead>
@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-  	{% for faltaprofesor in faltasprofesores %}
+  	{% for faltaprofesor in object_list %}
 	    <tr>
 	      <td>{{ faltaprofesor.profesor }}</td>
 	      <td>{{ faltaprofesor.materia }}</td>

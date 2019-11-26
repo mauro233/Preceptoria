@@ -10,16 +10,15 @@ from django.views.generic.list import ListView
 from .models import HorarioConsulta, Horario
 
 
-class ListHorarioConsultaView(ListView):
+class ListHorarioConsultaView(LoginRequiredMixin, ListView):
 	model = HorarioConsulta
-	queryset = HorarioConsulta.objects.all()
 	template_name = 'horarios_consulta/index.html'
-	context_object_name = 'horariosconsultas'
+	context_object_name = 'consultas'
 
-class DetailHorarioConsultaView(DetailView):
+class DetailHorarioConsultaView(LoginRequiredMixin, DetailView):
 	model = HorarioConsulta
-	#template_name = 'horario_consulta/detalle_anuncio.html'
-	context_object_name = 'detalle_consulta_horario'
+	template_name = 'horarios_consulta/detalle_consulta.html' 
+	context_object_name = 'consulta'
 
 
 class HorarioView(LoginRequiredMixin, ListView):

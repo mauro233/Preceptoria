@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block titulo %}Borrar: {{ anuncio.titulo }} {{ anuncio.fecha }} {% endblock titulo %}
+{% block contenido %}
+
+	<h1 class="text-white">Borrar: {{ anuncio.titulo }} del {{ anuncio.fecha }} </h1>
+	<a href="{% url 'anuncios:detail_anuncio' anuncio.id %}" class="btn btn-danger btn-lg" role="button" style="margin-right: 10px; margin-bottom: 10px;">Cancelar</a>
+	<div class="card text-white bg-dark mb-3" style="padding: 15px">
+	<form action="" method="post">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<p>Esta seguro que quiere borrar "{{ anuncio.titulo }} del {{ anuncio.fecha }}"?</p>
+    	<button type="submit" class="btn btn-danger">Borrar Anuncio</button>
+	</form>
+	</div>
+
+{% endblock contenido %}
